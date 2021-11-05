@@ -1,1 +1,5 @@
-bar = wws
+data:
+  env: localhost-dev
+  user:
+    username: wws
+    password: password
