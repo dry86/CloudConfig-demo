@@ -1,0 +1,27 @@
+################ 项目基本配置 ################
+spring:
+  application:
+    # 对应注册Eureka中的服务名
+    name: eureka-server
+
+################ Eureka配置 ################
+eureka:
+  client:
+    # 防止Eureka启动时注册本身服务
+    register-with-eureka: false
+    #    fetch-registry: false
+    serviceUrl:
+      defaultZone: http://localhost:8089/eureka/
+#  instance:
+#    prefer-ip-address: true
+#    instance-id: 127.0.0.1:8761
+
+  server:
+    response-cache-update-interval-ms: 10000   #缩短readOnlyChcheMap 更新周期，可减少滞后时间
+    use-read-only-response-cache: true         # 如果是fasle -> 让Client直接使用readWriteCacheMap 更新服务注册信息
+
+
+server:
+  port: 8088
+  enable-self-preservation: false
+
